@@ -4,17 +4,17 @@ from selenium import webdriver
 browser = webdriver.Chrome('chromedriver')
 browser.get("https://scholar.google.com/")
 
-searchFeild = browser.find_element_by_id("gs_hdr_tsi")
-searchFeild.send_keys("Melville, N., Kraemer, K., & Gurbaxani, V. (2004). Information technology and organizational performance: An integrative model of IT business value. MIS quarterly, 28(2), 283-322.")
-searchFeild.submit()
+search_feild = browser.find_element_by_id("gs_hdr_tsi")
+search_feild.send_keys("Melville, N., Kraemer, K., & Gurbaxani, V. (2004). Information technology and organizational performance: An integrative model of IT business value. MIS quarterly, 28(2), 283-322.")
+search_feild.submit()
 
-menueBar = browser.find_element_by_id("gs_hdr_mnu")
-menueBar.click()
+menue_bar = browser.find_element_by_id("gs_hdr_mnu")
+menue_bar.click()
 
 browser.implicitly_wait(1)
 
-settingButton = browser.find_element_by_partial_link_text("Settings")
-settingButton.click()
+setting_button = browser.find_element_by_partial_link_text("Settings")
+setting_button.click()
 
 l = browser.find_element_by_xpath("//input[@value='yes']")
 l.click()
@@ -22,7 +22,10 @@ l.click()
 inut = browser.find_element_by_id("gs_settings_import-bl")
 inut.click()
 
-inut2 = browser.find_element_by_xpath("//a[contains(text(), 'EndNote')]")
-inut2.click()
+end_note_option = browser.find_element_by_xpath("//a[contains(text(), 'EndNote')]")
+end_note_option.click()
+
+end_note_option = browser.find_element_by_xpath("//span[contains(text(), 'Save')]")
+end_note_option.click()
 
 # browser.quit()  # to close the browser
