@@ -5,9 +5,9 @@ browser = webdriver.Chrome('chromedriver')
 browser.get("https://scholar.google.com/")
 
 # find search feild and then search
-search_feild = browser.find_element_by_id("gs_hdr_tsi")
-search_feild.send_keys("Melville, N., Kraemer, K., & Gurbaxani, V. (2004). Information technology and organizational performance: An integrative model of IT business value. MIS quarterly, 28(2), 283-322.")
-search_feild.submit()
+# search_feild = browser.find_element_by_id("gs_hdr_tsi")
+# search_feild.send_keys("Melville, N., Kraemer, K., & Gurbaxani, V. (2004). Information technology and organizational performance: An integrative model of IT business value. MIS quarterly, 28(2), 283-322.")
+# search_feild.submit()
 
 # click menue icon
 menue_bar = browser.find_element_by_id("gs_hdr_mnu")
@@ -35,6 +35,14 @@ end_note_option.click()
 # save setting
 end_note_option = browser.find_element_by_xpath("//span[contains(text(), 'Save')]")
 end_note_option.click()
+
+
+### use loop here to download multiple files
+
+# find search feild and then search
+search_feild = browser.find_element_by_id("gs_hdr_tsi")
+search_feild.send_keys("Melville, N., Kraemer, K., & Gurbaxani, V. (2004). Information technology and organizational performance: An integrative model of IT business value. MIS quarterly, 28(2), 283-322.")
+search_feild.submit()
 
 # downloading file
 import_to_endNote = browser.find_element_by_partial_link_text("Import into EndNote")
