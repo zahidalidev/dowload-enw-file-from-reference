@@ -28,4 +28,8 @@ end_note_option.click()
 end_note_option = browser.find_element_by_xpath("//span[contains(text(), 'Save')]")
 end_note_option.click()
 
+import_to_endNote = browser.find_element_by_partial_link_text("Import into EndNote")
+import_to_endNote.click()
+
+
 # browser.quit()  # to close the browser
